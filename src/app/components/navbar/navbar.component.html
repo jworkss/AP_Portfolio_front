@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg bg-light sticky-top" id="navbar">
+  <div class="container-fluid">
+    <img
+      src="https://www.concordia.gob.ar/sites/all/themes/programar/images/arg-programa.png"
+      alt="Logo Argentina programa"
+      width="140"
+    />
+    <p class="navbar-brand mt-4 d-none d-sm-block" href="#">
+      Argentina Programa #YoProgramo
+    </p>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-end" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-4">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"
+            ><i class="fa-solid fa-house"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#sobre-mi">Sobre Mi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#proyectos">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a type="button" class="nav-link" href="/login" *ngIf="!isLogged"
+            ><i class="fa-solid fa-right-to-bracket"></i
+          ></a>
+        </li>
+        <li class="nav-item">
+          <a
+            type="button"
+            class="nav-link"
+            (click)="onLogOut()"
+            *ngIf="isLogged"
+            ><i class="fa-solid fa-square-xmark"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

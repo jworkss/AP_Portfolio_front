@@ -1,0 +1,32 @@
+<div>
+  <div class="banner position-absolute top-50 start-0 d-none d-md-block">
+    <div>
+      <app-redes
+        class="btn-group-vertical"
+        role="group"
+        aria-label="large Vertical button group "
+      ></app-redes>
+    </div>
+  </div>
+  <div
+    class="banner position-absolute top-50 start-50 translate-middle-x d-none d-sm-block"
+  >
+    <div class="text-center btn btn-outline-light" dislave>
+      <h1 class="h1">Hola, soy {{ persona.nombre }} {{ persona.apellido }}</h1>
+      <h2 class="h2">{{ persona.position }}</h2>
+      <p class="fs-4">{{ persona.sobre_mi }}</p>
+    </div>
+  </div>
+
+  <div
+    class="banner-2 position-absolute top-0 start-50 translate-middle-x d-sm-none"
+  >
+    <div class="text-center btn btn-outline-light" dislave>
+      <h1 class="h1">Hola, soy {{ persona.nombre }} {{ persona.apellido }}</h1>
+      <h2 class="h2">{{ persona.position }}</h2>
+      <p>
+        {{ persona.sobre_mi }}
+      </p>
+    </div>
+  </div>
+</div>
