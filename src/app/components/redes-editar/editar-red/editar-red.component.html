@@ -1,0 +1,121 @@
+<div class="container" *ngIf="isLogged">
+  <p class="h1 p-3 bg-success text-white text-center">
+    Modificar red {{ editRed.nombre }} ID = {{ editRed.id }}
+  </p>
+
+  <div>
+    <form #f="ngForm" novalidate *ngIf="editRed" (ngSubmit)="onUpdate()">
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        Dato: este nombre no va a aparecer en el front es solo para poder
+        buscarlo por nombre
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Nombre</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="nombreRed"
+          name="nombreRed"
+          [(ngModel)]="editRed.nombre"
+          required
+        />
+      </div>
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        Dato: usar solo el nombre de clase de font awesome ej: +fa-brands
+        fa-square-facebook para+ <i class="fa-brands fa-square-facebook"></i> o
+        midificar el front
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">URL FOTO / icon</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="url_foto"
+          name="url_foto"
+          [(ngModel)]="editRed.url_foto"
+          required
+        />
+      </div>
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        recorda poner http:// + nombre completo del acceso a tu red para agregar
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">URL RED</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="url_red"
+          name="url_red"
+          [(ngModel)]="editRed.url_red"
+          required
+        />
+      </div>
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        Dato: como default esta asignad la persona 1, modificarlo de ser
+        necesario
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Persona ID</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="persona_id"
+          name="persona_id"
+          [(ngModel)]="editRed.persona_id"
+          required
+        />
+      </div>
+
+      <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+          <div class="col">
+            <div class="p-3 border bg-light">
+              <button class="btn btn-success text-white" type="submit" >
+                Modificar red
+              </button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light">
+              <button class="btn btn-info text-white" routerLink="/red/nueva" type="button">
+                Volver a crear
+              </button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light">
+              <button class="btn btn-primary text-white" type="button" routerLink="/">
+                volver al index
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <p class="h1 p-3 bg-danger text-white text-center">
+    Seleccionar red para eliminar eliminar
+  </p>
+
+  <div class="container text-center">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div class="col" *ngFor="let red of redes">
+        <button
+          (click)="onDelete(red.id)"
+          type="button"
+          class="btn btn-danger"
+          routerLink="/red/nueva/"
+        >
+          {{ red.nombre }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
