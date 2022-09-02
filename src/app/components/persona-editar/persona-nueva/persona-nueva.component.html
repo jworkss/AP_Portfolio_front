@@ -1,0 +1,140 @@
+
+<div class="container" *ngIf="isLogged">
+  <div>
+    <p class="h1 p-3 bg-info text-white text-center">Crear nueva persona</p>
+    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Nombre</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="nombre"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Apellido</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="apellido"
+          name="apellido"
+          [(ngModel)]="apellido"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Fecha de Nacimiento</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="fecha_nac"
+          name="fecha_nac"
+          [(ngModel)]="fecha_nac"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Posicion</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="position"
+          name="position"
+          [(ngModel)]="position"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Breve resumen</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="sobre_mi"
+          name="sobre_mi"
+          [(ngModel)]="sobre_mi"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Curriculum URL</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="curriculum"
+          name="curriculum"
+          [(ngModel)]="curriculum"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Foto URL</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="url_foto"
+          name="url_foto"
+          [(ngModel)]="url_foto"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">resumen completo</span>
+
+        <textarea
+          class="form-control"
+          aria-describedby="basic-addon3"
+          id="position"
+          name="sobre_mi_bg"
+          [(ngModel)]="sobre_mi_bg"
+          required
+        ></textarea>
+      </div>
+      <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+          <div class="col">
+            <div class="p-3 border bg-light">
+              <button class="btn btn-info text-white" type="submit">
+                Crear persona
+              </button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light">
+              <button class="btn btn-primary" routerLink="/" type="button">
+                Volver al index
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <p class="h1 p-3 bg-success text-white text-center">Persona</p>
+  <div class="container text-center">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div class="col" *ngFor="let persona of personas">
+        <button
+          type="button"
+          class="btn btn-success"
+          routerLink="/persona/editar/{{ persona.id }}"
+        >
+          {{ persona.nombre }} {{ persona.apellido }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

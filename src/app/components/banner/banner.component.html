@@ -8,9 +8,16 @@
       ></app-redes>
     </div>
   </div>
+
+
   <div
     class="banner position-absolute top-50 start-50 translate-middle-x d-none d-sm-block"
   >
+  <div *ngIf="hasRoute('/') && isLogged">
+    <button type="button" class="btn btn-outline-light" routerLink="/persona/editar/{{persona.id}}">
+      Editar Persona
+    </button>
+  </div>
     <div class="text-center btn btn-outline-light" dislave>
       <h1 class="h1">Hola, soy {{ persona.nombre }} {{ persona.apellido }}</h1>
       <h2 class="h2">{{ persona.position }}</h2>
@@ -21,6 +28,11 @@
   <div
     class="banner-2 position-absolute top-0 start-50 translate-middle-x d-sm-none"
   >
+  <div *ngIf="hasRoute('/') && isLogged">
+    <button type="button" class="btn btn-outline-light" routerLink="/persona/editar/{{persona.id}}">
+      Editar persona
+    </button>
+  </div>
     <div class="text-center btn btn-outline-light" dislave>
       <h1 class="h1">Hola, soy {{ persona.nombre }} {{ persona.apellido }}</h1>
       <h2 class="h2">{{ persona.position }}</h2>

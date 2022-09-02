@@ -1,10 +1,5 @@
-<div *ngIf="hasRoute('/')">
-  <button
-    type="button"
-    class="btn btn-outline-light"
-    routerLink="/red/nueva"
-    *ngIf="isLogged"
-  >
+<div *ngIf="hasRoute('/') && isLogged">
+  <button type="button" class="btn btn-outline-light" routerLink="/red/nueva">
     editar redes
   </button>
 </div>

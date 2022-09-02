@@ -15,6 +15,8 @@ import { RedesComponent } from './components/redes/redes.component';
 import { LoginComponent } from './components/login/login.component';
 import { NuevaRedComponent } from './components/redes-editar/nueva-red/nueva-red.component';
 import { EditarRedComponent } from './components/redes-editar/editar-red/editar-red.component';
+import { PersonaNuevaComponent } from './components/persona-editar/persona-nueva/persona-nueva.component';
+import { PersonaEditarComponent } from './components/persona-editar/persona-editar/persona-editar.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { EditarRedComponent } from './components/redes-editar/editar-red/editar-
     LoginComponent,
     NuevaRedComponent,
     EditarRedComponent,
+    PersonaNuevaComponent,
+    PersonaEditarComponent,
   ],
   imports: [
     BrowserModule,

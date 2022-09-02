@@ -19,14 +19,14 @@ export class RedesComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.cargarContacto();
+    this.cargarRed();
     if (this.tokenService.getToken()) {
       this.isLogged = true;
     } else {
       this.isLogged = false;
     }
   }
-  cargarContacto(): void {
+  cargarRed(): void {
     this.redesService.redes().subscribe((data) => {
       this.redes = data;
     });
