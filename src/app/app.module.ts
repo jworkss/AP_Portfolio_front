@@ -17,6 +17,7 @@ import { NuevaRedComponent } from './components/redes-editar/nueva-red/nueva-red
 import { EditarRedComponent } from './components/redes-editar/editar-red/editar-red.component';
 import { PersonaNuevaComponent } from './components/persona-editar/persona-nueva/persona-nueva.component';
 import { PersonaEditarComponent } from './components/persona-editar/persona-editar/persona-editar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PersonaEditarComponent } from './components/persona-editar/persona-edit
     EditarRedComponent,
     PersonaNuevaComponent,
     PersonaEditarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
