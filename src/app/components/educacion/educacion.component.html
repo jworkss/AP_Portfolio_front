@@ -1,0 +1,44 @@
+
+<section class="container-fludi w-75 mx-auto text-center pt-5" id="educacion">
+  <div class="row mx-auto">
+
+    <h2 class="p3 fs-2 border-top border-bottom border-3">
+      <div *ngIf="isLogged">
+        <button
+          type="button"
+          class="btn btn-success"
+          routerLink="/educacion/crear"
+        >
+          Editar educacion
+        </button>
+      </div>Educacion</h2>
+
+
+      <div class="card mb-3" *ngFor="let educacion of educaciones" >
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="{{educacion.url_foto}}" class="img-fluid rounded-start " alt="..." style="max-width: 120px;">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{educacion.titulo}}</h5>
+              <h5 class="card-title">{{educacion.institucion}}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{educacion.direccion}}</li>
+                <li class="list-group-item">{{educacion.fecha_inicio | date: "MMMM, yyyy":undefined:'es' | titlecase}} - {{educacion.fecha_inicio | date: "yyyy"}} </li>
+                <li class="list-group-item"><button
+                  type="button"
+                  class="btn btn-success"
+                  routerLink="educacion/editar/{{educacion.id}}"
+                >
+                  Editar {{educacion.titulo}}
+                </button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  </div>
+</section>

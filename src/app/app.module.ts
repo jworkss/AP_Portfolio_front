@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -18,7 +18,16 @@ import { EditarRedComponent } from './components/redes-editar/editar-red/editar-
 import { PersonaNuevaComponent } from './components/persona-editar/persona-nueva/persona-nueva.component';
 import { PersonaEditarComponent } from './components/persona-editar/persona-editar/persona-editar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 
+//date
+import localePy from '@angular/common/locales/es-PY';
+import { registerLocaleData } from '@angular/common';
+import { EditarEducacionComponent } from './components/educacion-editar/editar-educacion/editar-educacion.component';
+import { NuevaEducacionComponent } from './components/educacion-editar/nueva-educacion/nueva-educacion.component';
+registerLocaleData(localePy, 'es')
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +43,11 @@ import { FooterComponent } from './components/footer/footer.component';
     PersonaNuevaComponent,
     PersonaEditarComponent,
     FooterComponent,
+    SobreMiComponent,
+    EducacionComponent,
+    ExperienciaComponent,
+    EditarEducacionComponent,
+    NuevaEducacionComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +56,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [Interceptor],
+  providers: [Interceptor, {provide: LOCALE_ID, useValue: 'es'}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
