@@ -62,7 +62,7 @@ export class EditarEducacionComponent implements OnInit {
   }
 
   loadEducacion(): void {
-    this.educacionService.educacion().subscribe((data) => {
+    this.educacionService.educaciones().subscribe((data) => {
       this.edicaciones = data;
     });
   }

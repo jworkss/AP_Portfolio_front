@@ -25,7 +25,7 @@ educaciones: Educacion[] = [];
   }
 
 cargarEducacion(): void {
-    this.educacionService.educacion().subscribe((data) => {
+    this.educacionService.educaciones().subscribe((data) => {
       this.educaciones = data;
     });
   }

@@ -9,15 +9,15 @@
           class="btn btn-success"
           routerLink="/educacion/crear"
         >
-          Editar educacion
+          Agregar educacion
         </button>
       </div>Educacion</h2>
 
 
       <div class="card mb-3" *ngFor="let educacion of educaciones" >
         <div class="row g-0">
-          <div class="col-md-4">
-            <img src="{{educacion.url_foto}}" class="img-fluid rounded-start " alt="..." style="max-width: 120px;">
+          <div class="col-md-4 d-flex align-items-center">
+            <img src="{{educacion.url_foto}}" class="img-fluid rounded-start mx-auto" alt="{{educacion.institucion}}" style="max-width: 120px;">
           </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -27,6 +27,7 @@
                 <li class="list-group-item">{{educacion.direccion}}</li>
                 <li class="list-group-item">{{educacion.fecha_inicio | date: "MMMM, yyyy":undefined:'es' | titlecase}} - {{educacion.fecha_inicio | date: "yyyy"}} </li>
                 <li class="list-group-item"><button
+                  *ngIf="isLogged"
                   type="button"
                   class="btn btn-success"
                   routerLink="educacion/editar/{{educacion.id}}"

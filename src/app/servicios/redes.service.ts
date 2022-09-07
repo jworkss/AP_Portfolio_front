@@ -7,8 +7,6 @@ import { ModelRedes } from '../model/redes';
   providedIn: 'root',
 })
 export class RedesService {
-
-
   redesURL = 'http://localhost:8080/redes/';
   constructor(private redesHttpClient: HttpClient) {}
 
@@ -31,5 +29,4 @@ export class RedesService {
   public delete(id: number): Observable<any> {
     return this.redesHttpClient.delete<any>(this.redesURL + `delete/${id}`);
   }
-
 }

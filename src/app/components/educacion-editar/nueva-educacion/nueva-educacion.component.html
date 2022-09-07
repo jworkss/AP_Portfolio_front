@@ -1,1 +1,124 @@
-<p>nueva-educacion works!</p>
+<div class="container" *ngIf="isLogged">
+  <div>
+    <p class="h1 p-3 bg-info text-white text-center">Crear nueva Educacion</p>
+    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Titulo</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="titulo"
+          [(ngModel)]="titulo"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">institucion</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="institucion"
+          [(ngModel)]="institucion"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Direccion</span>
+        <input
+          placeholder="Localidad, Provincia, Nacionalidad."
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="direccion"
+          [(ngModel)]="direccion"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">URL Foto</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="url_foto"
+          [(ngModel)]="url_foto"
+          required
+        />
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Fecha inicio</span>
+        <input
+          placeholder="yyyy-mm-dd"
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="fecha_inicio"
+          [(ngModel)]="fecha_inicio"
+          required
+        />
+        <span class="input-group-text">Fecha Fin</span>
+        <input
+          placeholder="yyyy-mm-dd"
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="fecha_fin"
+          [(ngModel)]="fecha_fin"
+          required
+        />
+      </div>
+
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        Dato: como default esta asignad la persona 1, modificarlo de ser
+        necesario
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Persona ID</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="persona_id"
+          [(ngModel)]="persona_id"
+          required
+        />
+
+        <div class="container overflow-hidden text-center">
+          <div class="row gx-5">
+            <div class="col">
+              <div class="p-3 border bg-light">
+                <button class="btn btn-info text-white" type="submit">
+                  Agregar educacion
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-3 border bg-light">
+                <button class="btn btn-primary" routerLink="/" type="button">
+                  Volver al index
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <p class="h1 p-3 bg-success text-white text-center">Modificar Educacion</p>
+  <div class="container text-center">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div class="col" *ngFor="let educacion of educaciones">
+        <button
+          type="button"
+          class="btn btn-success"
+          routerLink="/red/editar/{{ educacion.id }}"
+        >
+          {{ educacion.titulo }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

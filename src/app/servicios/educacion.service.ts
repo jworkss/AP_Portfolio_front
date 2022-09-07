@@ -10,22 +10,25 @@ export class EducacionService {
   educacionURL = 'http://localhost:8080/educacion/';
   constructor(private educacionHttpClient: HttpClient) {}
 
-  public educacion(): Observable<Educacion[]> {
+  public educaciones(): Observable<Educacion[]> {
     return this.educacionHttpClient.get<Educacion[]>(this.educacionURL + 'ver');
   }
 
-  public save(redes: Educacion): Observable<any> {
-    return this.educacionHttpClient.post<any>(this.educacionURL + 'new', redes);
+  public save(educacion: Educacion): Observable<any> {
+    return this.educacionHttpClient.post<any>(
+      this.educacionURL + 'new',
+      educacion
+    );
   }
 
   public buscar(id: number): Observable<any> {
     return this.educacionHttpClient.get<any>(this.educacionURL + `ver/${id}`);
   }
 
-  public upate(id: number, redes: Educacion): Observable<any> {
+  public upate(id: number, educacion: Educacion): Observable<any> {
     return this.educacionHttpClient.put<any>(
       this.educacionURL + `editar/${id}`,
-      redes
+      educacion
     );
   }
 
