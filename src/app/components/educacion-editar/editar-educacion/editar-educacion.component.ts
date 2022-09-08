@@ -10,13 +10,20 @@ import { TokenService } from 'src/app/servicios/token.service';
   styleUrls: ['./editar-educacion.component.css'],
 })
 export class EditarEducacionComponent implements OnInit {
+  educaciones: Educacion[] = [];
   isLogged = false;
+  id?: number;
+  titulo: string = '';
+  institucion: string = '';
+  url_foto: string = '';
+  direccion: string = '';
+  fecha_inicio: string = '';
+  fecha_fin: string = '';
+  persona_id: number = 1;
 
   selectedEducacion = '';
 
-  edicaciones: Educacion[] = [];
-
-  editRed: Educacion = null;
+  editEducacion: Educacion = null;
   constructor(
     private activateRoute: ActivatedRoute,
     public tokenService: TokenService,
@@ -34,18 +41,18 @@ export class EditarEducacionComponent implements OnInit {
     const id = this.activateRoute.snapshot.params['id'];
     this.educacionService.buscar(id).subscribe(
       (data) => {
-        this.editRed = data;
+        this.editEducacion = data;
       },
       (err) => {
-        alert('Error al modificar experiencia');
-        this.router.navigate(['editarredes']);
+        alert('Error al modificar Educacion');
+        this.router.navigate(['educacion/editar']);
       }
     );
   }
 
   onUpdate(): void {
     const id = this.activateRoute.snapshot.params['id'];
-    this.educacionService.upate(id, this.editRed).subscribe(
+    this.educacionService.upate(id, this.editEducacion).subscribe(
       (data) => {
         this.router.navigate(['/educacion/nueva']);
       },
@@ -63,7 +70,7 @@ export class EditarEducacionComponent implements OnInit {
 
   loadEducacion(): void {
     this.educacionService.educaciones().subscribe((data) => {
-      this.edicaciones = data;
+      this.educaciones = data;
     });
   }
   onSelected(nombre: string): void {
@@ -76,7 +83,7 @@ export class EditarEducacionComponent implements OnInit {
         (data) => {},
         (err) => {
           this.refresh();
-          alert('Se borro el contacto');
+          alert('Se se borro la educacion');
         }
       );
     }

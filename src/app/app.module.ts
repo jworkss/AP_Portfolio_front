@@ -27,6 +27,8 @@ import localePy from '@angular/common/locales/es-PY';
 import { registerLocaleData } from '@angular/common';
 import { EditarEducacionComponent } from './components/educacion-editar/editar-educacion/editar-educacion.component';
 import { NuevaEducacionComponent } from './components/educacion-editar/nueva-educacion/nueva-educacion.component';
+import { EditarExperienciaComponent } from './components/experiencia-editar/editar-experiencia/editar-experiencia.component';
+import { NuevaExperienciaComponent } from './components/experiencia-editar/nueva-experiencia/nueva-experiencia.component';
 registerLocaleData(localePy, 'es')
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ registerLocaleData(localePy, 'es')
     EducacionComponent,
     ExperienciaComponent,
     EditarEducacionComponent,
-    NuevaEducacionComponent
+    NuevaEducacionComponent,
+    EditarExperienciaComponent,
+    NuevaExperienciaComponent
   ],
   imports: [
     BrowserModule,

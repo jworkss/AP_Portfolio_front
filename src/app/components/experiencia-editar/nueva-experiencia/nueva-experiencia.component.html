@@ -1,50 +1,37 @@
 <div class="container" *ngIf="isLogged">
   <div>
-    <p class="h1 p-3 bg-info text-white text-center">Crear nueva Educacion</p>
-    <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate>
+    <p class="h1 p-3 bg-info text-white text-center">Crear nueva Experiencia</p>
+    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
       <div class="input-group mb-3">
-        <span class="input-group-text">Titulo</span>
+        <span class="input-group-text">Puesto</span>
         <input
           type="text"
           class="form-control"
           aria-describedby="basic-addon3"
-          name="titulo"
-          [(ngModel)]="editEducacion.titulo"
+          name="puesto"
+          [(ngModel)]="puesto"
           required
         />
       </div>
       <div class="input-group mb-3">
-        <span class="input-group-text">institucion</span>
+        <span class="input-group-text">Empresa</span>
         <input
           type="text"
           class="form-control"
           aria-describedby="basic-addon3"
-          name="institucion"
-          [(ngModel)]="editEducacion.institucion"
-          required
-        />
-      </div>
-
-      <div class="input-group mb-3">
-        <span class="input-group-text">Direccion</span>
-        <input
-          placeholder="Localidad, Provincia, Nacionalidad."
-          type="text"
-          class="form-control"
-          aria-describedby="basic-addon3"
-          name="direccion"
-          [(ngModel)]="editEducacion.direccion"
+          name="nombre_empresa"
+          [(ngModel)]="nombre_empresa"
           required
         />
       </div>
       <div class="input-group mb-3">
-        <span class="input-group-text">URL Foto</span>
+        <span class="input-group-text">Tipo de Empleo</span>
         <input
           type="text"
           class="form-control"
           aria-describedby="basic-addon3"
-          name="url_foto"
-          [(ngModel)]="editEducacion.url_foto"
+          name="tipo_empleo"
+          [(ngModel)]="tipo_empleo"
           required
         />
       </div>
@@ -56,7 +43,7 @@
           class="form-control"
           aria-describedby="basic-addon3"
           name="fecha_inicio"
-          [(ngModel)]="editEducacion.fecha_inicio"
+          [(ngModel)]="fecha_inicio"
           required
         />
         <span class="input-group-text">Fecha Fin</span>
@@ -66,9 +53,21 @@
           class="form-control"
           aria-describedby="basic-addon3"
           name="fecha_fin"
-          [(ngModel)]="editEducacion.fecha_fin"
+          [(ngModel)]="fecha_fin"
           required
         />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">descripcion</span>
+        <textarea
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="descripcion"
+          [(ngModel)]="descripcion"
+          required
+        ></textarea>
       </div>
 
       <p class="p-3 mb-2 bg-secondary text-white text-center">
@@ -82,7 +81,7 @@
           class="form-control"
           aria-describedby="basic-addon3"
           name="persona_id"
-          [(ngModel)]="editEducacion.persona_id"
+          [(ngModel)]="persona_id"
           required
         />
 
@@ -90,15 +89,8 @@
           <div class="row gx-5">
             <div class="col">
               <div class="p-3 border bg-light">
-                <button class="btn btn-success text-white" type="submit">
-                  edit educacion
-                </button>
-              </div>
-            </div>
-            <div class="col">
-              <div class="p-3 border bg-light">
-                <button class="btn btn-info text-white" routerLink="/educacion/crear" type="button">
-                  Volver a crear educacion
+                <button class="btn btn-info text-white" type="submit">
+                  Agregar Experiencia
                 </button>
               </div>
             </div>
@@ -114,17 +106,16 @@
       </div>
     </form>
   </div>
-  <p class="h1 p-3 bg-danger text-white text-center">Borrar Educacion</p>
+  <p class="h1 p-3 bg-success text-white text-center">Modificar Experiencia</p>
   <div class="container text-center">
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-      <div class="col" *ngFor="let educacion of educaciones">
+      <div class="col" *ngFor="let experiencia of experiencias">
         <button
           type="button"
-          class="btn btn-danger"
-          routerLink="/educacion/crear/"
-          (click)="onDelete(educacion.id)"
+          class="btn btn-success"
+          routerLink="/experiencia/editar/{{ experiencia.id }}"
         >
-          {{ educacion.titulo }}
+          {{ experiencia.puesto }}
         </button>
       </div>
     </div>

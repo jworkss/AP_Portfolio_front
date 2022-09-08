@@ -28,7 +28,6 @@ export class NuevaEducacionComponent implements OnInit {
   constructor(
     private educacionService: EducacionService,
     private router: Router,
-    private activateRoute: ActivatedRoute,
     private tokenService: TokenService
   ) {}
 
