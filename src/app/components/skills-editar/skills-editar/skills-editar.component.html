@@ -1,13 +1,9 @@
 <div class="container" *ngIf="isLogged">
-  <p class="h1 p-3 bg-success text-white text-center">
-    Modificar red {{ editRed.nombre }} ID = {{ editRed.id }}
-  </p>
-
   <div>
-    <form #f="ngForm" novalidate *ngIf="editRed" (ngSubmit)="onUpdate()">
+    <p class="h1 p-3 bg-info text-white text-center">Modificar red {{ editSkill.nombre }} || ID = {{ editSkill.id }}</p>
+    <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate>
       <p class="p-3 mb-2 bg-secondary text-white text-center">
-        Dato: este nombre no va a aparecer en el front es solo para poder
-        buscarlo por nombre
+        Nombre de la habilidad
       </p>
       <div class="input-group mb-3">
         <span class="input-group-text">Nombre</span>
@@ -15,44 +11,55 @@
           type="text"
           class="form-control"
           aria-describedby="basic-addon3"
-          id="nombreRed"
-          name="nombreRed"
-          [(ngModel)]="editRed.nombre"
+          name="nombre"
+          [(ngModel)]="editSkill.nombre"
           required
         />
       </div>
       <p class="p-3 mb-2 bg-secondary text-white text-center">
-        Dato: usar solo el nombre de clase de font awesome ej: +fa-brands
-        fa-square-facebook para+ <i class="fa-brands fa-square-facebook"></i> o
-        midificar el front
+        Nivel de la habilidad de 0 a 100
       </p>
       <div class="input-group mb-3">
-        <span class="input-group-text">URL FOTO / icon</span>
+        <span class="input-group-text">Nivel</span>
         <input
           type="text"
           class="form-control"
           aria-describedby="basic-addon3"
-          id="url_foto"
+          name="nivel"
+          [(ngModel)]="editSkill.nivel"
+          required
+        />
+      </div>
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        Color hexadesimal para rueda
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Color linea exterior</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
           name="url_foto"
-          [(ngModel)]="editRed.url_foto"
+          [(ngModel)]="editSkill.url_foto"
           required
         />
       </div>
+
       <p class="p-3 mb-2 bg-secondary text-white text-center">
-        recorda poner http:// + nombre completo del acceso a tu red para agregar
+        Tipos: Front End -- BackEnd -- Habilidades blandas
       </p>
       <div class="input-group mb-3">
-        <span class="input-group-text">URL RED</span>
+        <span class="input-group-text">Tipo Skill</span>
         <input
           type="text"
           class="form-control"
           aria-describedby="basic-addon3"
-          id="url_red"
-          name="url_red"
-          [(ngModel)]="editRed.url_red"
+          name="tipo_skill"
+          [(ngModel)]="editSkill.tipo_skill"
           required
         />
       </div>
+
       <p class="p-3 mb-2 bg-secondary text-white text-center">
         Dato: como default esta asignad la persona 1, modificarlo de ser
         necesario
@@ -63,33 +70,24 @@
           type="text"
           class="form-control"
           aria-describedby="basic-addon3"
-          id="persona_id"
           name="persona_id"
-          [(ngModel)]="editRed.persona_id"
+          [(ngModel)]="editSkill.persona_id"
           required
         />
       </div>
-
       <div class="container overflow-hidden text-center">
         <div class="row gx-5">
           <div class="col">
             <div class="p-3 border bg-light">
-              <button class="btn btn-success text-white" type="submit" >
-                Modificar red
+              <button class="btn btn-info text-white" type="submit">
+                Actualizar {{editSkill.nombre}}
               </button>
             </div>
           </div>
           <div class="col">
             <div class="p-3 border bg-light">
-              <button class="btn btn-info text-white" routerLink="/red/nueva" type="button">
-                Volver a crear
-              </button>
-            </div>
-          </div>
-          <div class="col">
-            <div class="p-3 border bg-light">
-              <button class="btn btn-primary text-white" type="button" routerLink="/">
-                volver al index
+              <button class="btn btn-primary" routerLink="/" type="button">
+                Volver al index
               </button>
             </div>
           </div>
@@ -98,18 +96,15 @@
     </form>
   </div>
 
-  <p class="h1 p-3 bg-danger text-white text-center">
-    Seleccionar red para eliminar eliminar
-  </p>
-
+  <p class="h1 p-3 bg-danger text-white text-center mt-4">Eliminar Skill</p>
   <div class="container text-center">
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-      <div class="col" *ngFor="let red of redes">
+      <div class="col" *ngFor="let red of skills">
         <button
-          (click)="onDelete(red.id)"
+        (click)="onDelete(red.id)"
           type="button"
           class="btn btn-danger"
-          routerLink="/red/crear/"
+          routerLink="/red/editar/"
         >
           {{ red.nombre }}
         </button>
@@ -117,5 +112,3 @@
     </div>
   </div>
 </div>
-
-

@@ -54,11 +54,7 @@ export class EditarEducacionComponent implements OnInit {
     const id = this.activateRoute.snapshot.params['id'];
     this.educacionService.upate(id, this.editEducacion).subscribe(
       (data) => {
-        this.router.navigate(['/educacion/nueva']);
-      },
-      (err) => {
-        alert('Se logro modificar expereincia');
-        this.router.navigate(['/educacion/nueva']);
+        this.router.navigate(['/educacion/crear']);
       }
     );
     this.refresh();

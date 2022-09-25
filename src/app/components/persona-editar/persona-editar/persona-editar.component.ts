@@ -59,11 +59,11 @@ export class PersonaEditarComponent implements OnInit {
     const id = this.activateRoute.snapshot.params['id'];
     this.personaService.upate(id, this.editPersona).subscribe(
       (data) => {
-        this.router.navigate(['/red/nueva']);
+        this.router.navigate(['/red/crear']);
       },
       (err) => {
         alert('Se logro modificar expereincia');
-        this.router.navigate(['/red/nueva']);
+        this.router.navigate(['/red/crear']);
       }
     );
     this.refresh();

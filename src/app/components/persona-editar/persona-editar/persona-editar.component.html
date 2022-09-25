@@ -96,6 +96,7 @@
       <span class="input-group-text">resumen completo</span>
 
       <textarea
+      rows="4"
         class="form-control"
         aria-describedby="basic-addon3"
         id="position"
@@ -118,7 +119,7 @@
           <div class="p-3 border bg-light">
             <button
               class="btn btn-info text-white"
-              routerLink="/persona/nueva"
+              routerLink="/persona/crear"
               type="button"
             >
               Ir a crear Persona
@@ -151,7 +152,7 @@
           (click)="onDelete(persona.id)"
           type="button"
           class="btn btn-danger"
-          routerLink="/persona/nueva/"
+          routerLink="/persona/crear/"
         >
           {{ persona.nombre }} {{ persona.apellido }}
         </button>

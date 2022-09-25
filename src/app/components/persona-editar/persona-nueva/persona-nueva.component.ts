@@ -62,12 +62,12 @@ export class PersonaNuevaComponent implements OnInit {
     );
     this.personaService.save(createPersona).subscribe(
       (data) => {
-        alert('Red fallo');
-        this.router.navigate(['/red/nueva']);
+        alert('Persona Fallo');
+        this.router.navigate(['/persona/nueva']);
       },
       (err) => {
-        alert('red añadida');
-        this.router.navigate(['/red/nueva']);
+        alert('Persona añadida');
+        this.router.navigate(['/persona/nueva']);
       }
     );
     this.refresh();

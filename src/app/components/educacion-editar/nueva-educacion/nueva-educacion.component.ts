@@ -53,11 +53,11 @@ export class NuevaEducacionComponent implements OnInit {
     this.educacionService.save(educacion).subscribe(
       (data) => {
         alert('Red fallo');
-        this.router.navigate(['/red/nueva']);
+        this.router.navigate(['/educacion/nueva']);
       },
       (err) => {
         alert('red añadida');
-        this.router.navigate(['/red/nueva']);
+        this.router.navigate(['/educacion/nueva']);
       }
     );
     this.refresh();

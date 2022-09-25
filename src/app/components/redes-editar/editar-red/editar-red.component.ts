@@ -43,7 +43,7 @@ export class EditarRedComponent implements OnInit {
         this.editRed = data;
       },
       (err) => {
-        alert('Error al modificar experiencia');
+        alert('Error al modificar el contacto');
         this.router.navigate(['editarredes']);
       }
     );
@@ -53,11 +53,11 @@ export class EditarRedComponent implements OnInit {
     const id = this.activateRoute.snapshot.params['id'];
     this.redesService.upate(id, this.editRed).subscribe(
       (data) => {
-        this.router.navigate(['/red/nueva']);
+        this.router.navigate(['/red/crear']);
       },
       (err) => {
-        alert('Se logro modificar expereincia');
-        this.router.navigate(['/red/nueva']);
+        alert('Se logro modificar el contacto');
+        this.router.navigate(['/red/crear']);
       }
     );
     this.refresh();
