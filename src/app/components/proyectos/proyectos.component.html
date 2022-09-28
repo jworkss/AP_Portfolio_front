@@ -11,15 +11,21 @@
         Agregar proyectos
       </button>
     </div>Proyectos</h2>
-  <div class="card" style="width: 18rem">
-    <img src="..." class="card-img-top" alt="..." />
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+
+    <div class="row">
+      <div class="col-sm-6" *ngFor="let proyecto of proyectos">
+        <div class="card h-100">
+          <div class="card-body">
+            <img src="{{proyecto.url_foto}}" class="card-img-top responsive h-50"  alt="{{proyecto.nombre}}" />
+            <h5 class="card-title">{{proyecto.nombre}}</h5>
+            <p class="card-text">{{proyecto.descripcion}}</p>
+            <a href="{{proyecto.url_proyecto}}" target="_blank" class="btn btn-lg btn-primary"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
+
 </section>

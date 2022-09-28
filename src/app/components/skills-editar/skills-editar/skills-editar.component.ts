@@ -7,7 +7,7 @@ import { TokenService } from 'src/app/servicios/token.service';
 @Component({
   selector: 'app-skills-editar',
   templateUrl: './skills-editar.component.html',
-  styleUrls: ['./skills-editar.component.css']
+  styleUrls: ['./skills-editar.component.css'],
 })
 export class SkillsEditarComponent implements OnInit {
   id?: number;
@@ -25,9 +25,12 @@ export class SkillsEditarComponent implements OnInit {
 
   editSkill: ModelSkills = null;
 
-  constructor( private skillsService: SkillsService, private router: Router,
+  constructor(
+    private skillsService: SkillsService,
+    private router: Router,
     private activateRoute: ActivatedRoute,
-    private tokenService: TokenService) { }
+    private tokenService: TokenService
+  ) {}
 
   ngOnInit(): void {
     this.loadSkills();
@@ -66,8 +69,6 @@ export class SkillsEditarComponent implements OnInit {
     this.skillsService.skills().subscribe((data) => {
       this.skills = data;
     });
-
-
   }
   refresh(): void {
     window.location.reload();
@@ -80,12 +81,10 @@ export class SkillsEditarComponent implements OnInit {
   onDelete(id?: number) {
     if (id != undefined) {
       this.skillsService.delete(id).subscribe(
-        (data) => {
-        },
+        (data) => {},
         (err) => {
           this.refresh();
           alert('Se borro el skill');
-
         }
       );
     }

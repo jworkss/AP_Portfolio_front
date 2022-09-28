@@ -1,1 +1,113 @@
-<p>proyectos-nuevo works!</p>
+<div class="container" *ngIf="isLogged">
+  <div>
+    <p class="h1 p-3 bg-info text-white text-center">Crear nuevo Proyecto</p>
+    <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        Nombre del Proyecto
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Nombre</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="nombre"
+          [(ngModel)]="nombre"
+          required
+        />
+      </div>
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        brebe descripción del proyecto
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Descripción</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="descripcion"
+          [(ngModel)]="descripcion"
+          required
+        />
+      </div>
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        enlace de la foto del proyecto
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">URL foto del proyecto</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="url_foto"
+          [(ngModel)]="url_foto"
+          required
+        />
+      </div>
+
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        Direccion del proyecto
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">URL proyecto</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="url_proyecto"
+          [(ngModel)]="url_proyecto"
+          required
+        />
+      </div>
+
+      <p class="p-3 mb-2 bg-secondary text-white text-center">
+        Dato: como default esta asignad la persona 1, modificarlo de ser
+        necesario
+      </p>
+      <div class="input-group mb-3">
+        <span class="input-group-text">Persona ID</span>
+        <input
+          type="text"
+          class="form-control"
+          aria-describedby="basic-addon3"
+          name="persona_id"
+          [(ngModel)]="persona_id"
+          required
+        />
+      </div>
+      <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+          <div class="col">
+            <div class="p-3 border bg-light">
+              <button class="btn btn-info text-white" type="submit">
+                Agregar {{nombre}}
+              </button>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3 border bg-light">
+              <button class="btn btn-primary" routerLink="/" type="button">
+                Volver al index
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <p class="h1 p-3 bg-success text-white text-center mt-4">Modificar Proyecto</p>
+  <div class="container text-center">
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <div class="col" *ngFor="let proyecto of proyectos">
+        <button
+          type="button"
+          class="btn btn-success"
+          routerLink="/proyectos/editar/{{ proyecto.id }}"
+        >
+          {{ proyecto.nombre }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
