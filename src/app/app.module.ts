@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Interceptor } from './servicios/interceptor';
-
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainComponent } from './components/main/main.component';
@@ -27,14 +27,16 @@ import { NuevaEducacionComponent } from './components/educacion-editar/nueva-edu
 import { EditarExperienciaComponent } from './components/experiencia-editar/editar-experiencia/editar-experiencia.component';
 import { NuevaExperienciaComponent } from './components/experiencia-editar/nueva-experiencia/nueva-experiencia.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import { SkillsNuevaComponent } from './components/skills-editar/skills-nueva/skills-nueva.component';
+import { SkillsEditarComponent } from './components/skills-editar/skills-editar/skills-editar.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { ProyectosNuevoComponent } from './components/proyectos-eiditar/proyectos-nuevo/proyectos-nuevo.component';
+import { ProyectosEditarComponent } from './components/proyectos-eiditar/proyectos-editar/proyectos-editar.component';
 
 //date
 import localePy from '@angular/common/locales/es-PY';
 import { registerLocaleData } from '@angular/common';
-import { NgCircleProgressModule } from 'ng-circle-progress';
-import { SkillsNuevaComponent } from './components/skills-editar/skills-nueva/skills-nueva.component';
-import { SkillsEditarComponent } from './components/skills-editar/skills-editar/skills-editar.component';
-registerLocaleData(localePy, 'es')
+registerLocaleData(localePy, 'es');
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +61,10 @@ registerLocaleData(localePy, 'es')
     NuevaExperienciaComponent,
     SkillsComponent,
     SkillsNuevaComponent,
-    SkillsEditarComponent
+    SkillsEditarComponent,
+    ProyectosComponent,
+    ProyectosNuevoComponent,
+    ProyectosEditarComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,7 @@ registerLocaleData(localePy, 'es')
     FormsModule,
     NgCircleProgressModule.forRoot({}),
   ],
-  providers: [Interceptor, {provide: LOCALE_ID, useValue: 'es'}],
+  providers: [Interceptor, { provide: LOCALE_ID, useValue: 'es' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

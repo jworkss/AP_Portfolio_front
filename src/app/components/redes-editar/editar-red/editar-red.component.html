@@ -1,6 +1,6 @@
 <div class="container" *ngIf="isLogged">
   <p class="h1 p-3 bg-success text-white text-center">
-    Modificar red {{ editRed.nombre }} ID = {{ editRed.id }}
+    Modificar red {{editRed.nombre}} ID = {{ editRed.id }}
   </p>
 
   <div>
@@ -23,7 +23,7 @@
       </div>
       <p class="p-3 mb-2 bg-secondary text-white text-center">
         Dato: usar solo el nombre de clase de font awesome ej: +fa-brands
-        fa-square-facebook para+ <i class="fa-brands fa-square-facebook"></i> o
+        fa-square-facebook para <i class="fa-brands fa-square-facebook"></i> o
         midificar el front
       </p>
       <div class="input-group mb-3">
@@ -75,7 +75,7 @@
           <div class="col">
             <div class="p-3 border bg-light">
               <button class="btn btn-success text-white" type="submit" >
-                Modificar red
+                Modificar {{editRed.nombre}}
               </button>
             </div>
           </div>
@@ -110,7 +110,7 @@
           type="button"
           class="btn btn-danger"
           routerLink="/red/crear/"
-        >
+        > Borrar
           {{ red.nombre }}
         </button>
       </div>

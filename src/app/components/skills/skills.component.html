@@ -1,11 +1,15 @@
 
-<section class="container text-center" id="skills">
-  <div *ngIf="hasRoute('/') && isLogged">
-    <button type="button" class="btn btn-success" routerLink="/skills/crear">
-      Crear nuevo skill
-    </button>
-  </div>
-
+<section class="container-fludi w-75 mx-auto text-center pt-5" id="skills">
+  <h2 class="p3 fs-2 border-top border-bottom border-3">
+    <div *ngIf="hasRoute('/') && isLogged">
+      <button
+        type="button"
+        class="btn btn-success"
+        routerLink="/skills/crear"
+      >
+        Agregar skills
+      </button>
+    </div>Skills</h2>
 
   <div  >
     <circle-progress *ngFor="let skill of skills"
