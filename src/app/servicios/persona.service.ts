@@ -14,8 +14,8 @@ export class PersonaService {
     return this.personasHttpClient.get<Persona[]>(this.personaURL + 'ver');
   }
 
-  public save(redes: Persona): Observable<any> {
-    return this.personasHttpClient.post<any>(this.personaURL + 'new', redes);
+  public save(persona: Persona): Observable<any> {
+    return this.personasHttpClient.post<any>(this.personaURL + 'new', persona);
   }
 
   public buscar(id: number): Observable<any> {
