@@ -10,7 +10,7 @@ import { Jwtdto } from '../model/jwtdto';
   providedIn: 'root',
 })
 export class AuthService {
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://apmarcosback.herokuapp.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 

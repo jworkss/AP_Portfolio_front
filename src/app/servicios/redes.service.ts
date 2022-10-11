@@ -7,7 +7,7 @@ import { ModelRedes } from '../model/redes';
   providedIn: 'root',
 })
 export class RedesService {
-  redesURL = 'http://localhost:8080/redes/';
+  redesURL = 'https://apmarcosback.herokuapp.com/redes/';
   constructor(private redesHttpClient: HttpClient) {}
 
   public redes(): Observable<ModelRedes[]> {

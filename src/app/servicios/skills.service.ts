@@ -4,10 +4,12 @@ import { Observable } from 'rxjs';
 import { ModelSkills } from '../model/skills';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SkillsService {
-  skillsURL = 'http://localhost:8080/skills/';
+  // 'http://localhost:8080/skills/';
+
+  skillsURL = 'https://apmarcosback.herokuapp.com/skills/';
   constructor(private skillsHttpClient: HttpClient) {}
 
   public skills(): Observable<ModelSkills[]> {
@@ -23,7 +25,10 @@ export class SkillsService {
   }
 
   public upate(id: number, skills: ModelSkills): Observable<any> {
-    return this.skillsHttpClient.put<any>(this.skillsURL + `editar/${id}`, skills);
+    return this.skillsHttpClient.put<any>(
+      this.skillsURL + `editar/${id}`,
+      skills
+    );
   }
 
   public delete(id: number): Observable<any> {
