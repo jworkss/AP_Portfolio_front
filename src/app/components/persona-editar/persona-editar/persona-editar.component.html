@@ -35,6 +35,7 @@
       <input
         type="text"
         class="form-control"
+        placeholder="yyyy-mm-dd"
         aria-describedby="basic-addon3"
         id="fecha_nac"
         name="fecha_nac"
@@ -142,7 +143,7 @@
   </form>
 
   <p class="h1 p-3 bg-danger text-white text-center">
-    Seleccionar red para eliminar eliminar
+    Seleccionar Persona para eliminar eliminar
   </p>
 
   <div class="container text-center">
@@ -153,7 +154,7 @@
           type="button"
           class="btn btn-danger"
           routerLink="/persona/crear/"
-        >
+        > Borrar
           {{ persona.nombre }} {{ persona.apellido }}
         </button>
       </div>

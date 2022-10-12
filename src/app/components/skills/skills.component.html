@@ -34,7 +34,16 @@
       outerStrokeGradientStopColor="{{skill.url_foto}}"
 
 
-    ></circle-progress>
+    >
+   <button
+      *ngIf="isLogged"
+      type="button"
+      class="btn btn-success"
+      routerLink="skills/editar/{{skill.id}}"
+    >
+      Editar {{skill.nombre}}
+    </button></circle-progress>
+
   </div>
 </section>
 

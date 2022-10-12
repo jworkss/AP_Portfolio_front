@@ -33,6 +33,7 @@
         <span class="input-group-text">Fecha de Nacimiento</span>
         <input
           type="text"
+          placeholder="yyyy-mm-dd"
           class="form-control"
           aria-describedby="basic-addon3"
           id="fecha_nac"
@@ -124,7 +125,7 @@
       </div>
     </form>
   </div>
-  <p class="h1 p-3 bg-success text-white text-center">Persona</p>
+  <p class="h1 p-3 bg-success text-white text-center">Seleccionar Persona a Modificar</p>
   <div class="container text-center">
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
       <div class="col" *ngFor="let persona of personas">
@@ -132,7 +133,7 @@
           type="button"
           class="btn btn-success"
           routerLink="/persona/editar/{{ persona.id }}"
-        >
+        >Modificar
           {{ persona.nombre }} {{ persona.apellido }}
         </button>
       </div>

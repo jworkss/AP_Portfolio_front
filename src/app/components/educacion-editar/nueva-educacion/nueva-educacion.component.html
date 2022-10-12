@@ -107,7 +107,7 @@
       </div>
     </form>
   </div>
-  <p class="h1 p-3 bg-success text-white text-center">Modificar Educacion</p>
+  <p class="h1 p-3 bg-success text-white text-center">Seleccionar Educacion a Modificar </p>
   <div class="container text-center">
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
       <div class="col" *ngFor="let educacion of educaciones">
@@ -115,7 +115,7 @@
           type="button"
           class="btn btn-success"
           routerLink="/educacion/editar/{{ educacion.id }}"
-        >
+        > Modificar
           {{ educacion.titulo }}
         </button>
       </div>

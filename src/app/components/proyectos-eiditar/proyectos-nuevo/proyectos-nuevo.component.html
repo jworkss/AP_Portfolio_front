@@ -2,9 +2,6 @@
   <div>
     <p class="h1 p-3 bg-info text-white text-center">Crear nuevo Proyecto</p>
     <form #f="ngForm" (ngSubmit)="onCreate()" novalidate>
-      <p class="p-3 mb-2 bg-secondary text-white text-center">
-        Nombre del Proyecto
-      </p>
       <div class="input-group mb-3">
         <span class="input-group-text">Nombre</span>
         <input
@@ -16,9 +13,7 @@
           required
         />
       </div>
-      <p class="p-3 mb-2 bg-secondary text-white text-center">
-        brebe descripción del proyecto
-      </p>
+
       <div class="input-group mb-3">
         <span class="input-group-text">Descripción</span>
         <input
@@ -30,9 +25,7 @@
           required
         />
       </div>
-      <p class="p-3 mb-2 bg-secondary text-white text-center">
-        enlace de la foto del proyecto
-      </p>
+
       <div class="input-group mb-3">
         <span class="input-group-text">URL foto del proyecto</span>
         <input
@@ -45,9 +38,6 @@
         />
       </div>
 
-      <p class="p-3 mb-2 bg-secondary text-white text-center">
-        Direccion del proyecto
-      </p>
       <div class="input-group mb-3">
         <span class="input-group-text">URL proyecto</span>
         <input
@@ -61,8 +51,7 @@
       </div>
 
       <p class="p-3 mb-2 bg-secondary text-white text-center">
-        Dato: como default esta asignad la persona 1, modificarlo de ser
-        necesario
+        Dato: como default esta asignad la persona 1
       </p>
       <div class="input-group mb-3">
         <span class="input-group-text">Persona ID</span>
@@ -80,7 +69,7 @@
           <div class="col">
             <div class="p-3 border bg-light">
               <button class="btn btn-info text-white" type="submit">
-                Agregar {{nombre}}
+                Agregar {{ nombre }}
               </button>
             </div>
           </div>
@@ -96,7 +85,9 @@
     </form>
   </div>
 
-  <p class="h1 p-3 bg-success text-white text-center mt-4">Modificar Proyecto</p>
+  <p class="h1 p-3 bg-success text-white text-center mt-4">
+    Elegir Proyecto a Modificar
+  </p>
   <div class="container text-center">
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
       <div class="col" *ngFor="let proyecto of proyectos">
@@ -105,6 +96,7 @@
           class="btn btn-success"
           routerLink="/proyectos/editar/{{ proyecto.id }}"
         >
+          Modificar
           {{ proyecto.nombre }}
         </button>
       </div>
