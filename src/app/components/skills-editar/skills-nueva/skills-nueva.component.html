@@ -43,6 +43,7 @@
           [(ngModel)]="url_foto"
           required
         />
+        <span [ngStyle]="{'background-color': url_foto }" class="input-group-text text-white">color de fondo</span>
       </div>
 
       <p class="p-3 mb-2 bg-secondary text-white text-center">
@@ -61,8 +62,7 @@
       </div>
 
       <p class="p-3 mb-2 bg-secondary text-white text-center">
-        Dato: como default esta asignad la persona 1, modificarlo de ser
-        necesario
+        Dato: como default esta asignad la persona 1
       </p>
       <div class="input-group mb-3">
         <span class="input-group-text">Persona ID</span>

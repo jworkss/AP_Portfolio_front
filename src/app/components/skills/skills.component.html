@@ -1,19 +1,17 @@
-
 <section class="container-fludi w-75 mx-auto text-center pt-5" id="skills">
   <h2 class="p3 fs-2 border-top border-bottom border-3">
     <div *ngIf="hasRoute('/') && isLogged">
-      <button
-        type="button"
-        class="btn btn-success"
-        routerLink="/skills/crear"
-      >
-        Agregar skills
+      <button type="button" class="btn btn-success" routerLink="/skills/crear">
+        Agregar/Modificar skills
       </button>
-    </div>Skills</h2>
+    </div>
+    Skills
+  </h2>
 
-  <div  >
-    <circle-progress *ngFor="let skill of skills"
-    class="col- 2"
+  <div>
+    <circle-progress
+      *ngFor="let skill of skills"
+      class="col- 2"
       [radius]="60"
       [space]="-10"
       [outerStrokeGradient]="true"
@@ -27,24 +25,13 @@
       [showBackground]="false"
       [clockwise]="false"
       [lazy]="true"
-      [title]=(skill.nombre)
-      subtitle="{{skill.nivel}}%"
-      [percent]=(skill.nivel)
-      outerStrokeColor="{{skill.url_foto}}"
-      outerStrokeGradientStopColor="{{skill.url_foto}}"
-
-
+      subtitleFontSize="20"
+      [title]="skill.nombre"
+      subtitle="{{ skill.nivel }}%"
+      [percent]="skill.nivel"
+      outerStrokeColor="{{ skill.url_foto }}"
+      outerStrokeGradientStopColor="{{ skill.url_foto }}"
     >
-   <button
-      *ngIf="isLogged"
-      type="button"
-      class="btn btn-success"
-      routerLink="skills/editar/{{skill.id}}"
-    >
-      Editar {{skill.nombre}}
-    </button></circle-progress>
-
+    </circle-progress>
   </div>
 </section>
-
-

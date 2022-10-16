@@ -1,5 +1,5 @@
-<section class="container-fludi w-75 mx-auto text-center pt-5" id="experiencia">
-  <div class="row mx-auto">
+<section class="container-fluid w-75 mx-auto text-center pt-5" id="experiencia">
+  <div class="mx-auto">
     <h2 class="p3 fs-2 border-top border-bottom border-3">
       <div *ngIf="isLogged">
         <button
@@ -13,31 +13,35 @@
       Experiencia
     </h2>
 
-    <div class="card mt-2" *ngFor="let experiencia of experiencias">
-      <div class="card-header">{{ experiencia.nombre_empresa }}</div>
-      <div class="card-body">
-        <h5 class="card-title">{{ experiencia.puesto }}</h5>
-        <p class="card-text">
-          {{ experiencia.descripcion }}
-        </p>
-        <p class="">
-          {{
-            experiencia.fecha_inicio
-              | date: "MMMM, yyyy":undefined:"es"
-              | titlecase
-          }}
-          - {{ experiencia.fecha_inicio | date: "yyyy" }}
-        </p>
+    <div class="row">
+      <div class="col-sm-4 mb-2" *ngFor="let experiencia of experiencias">
+        <div class="card">
+          <div class="card-header">{{ experiencia.puesto }} </div>
+          <div class="card-body">
 
-        <button
-          *ngIf="isLogged"
-          type="button"
-          class="btn btn-success"
-          routerLink="experiencia/editar/{{ experiencia.id }}"
-        >
-          Editar {{ experiencia.puesto }}
-        </button>
+            <h5 class="card-title">{{ experiencia.nombre_empresa }}</h5>
+            <p class="card-text">{{ experiencia.descripcion }}</p>
+            <p class="">
+              {{
+                experiencia.fecha_inicio
+                  | date: "MMMM, yyyy":undefined:"es"
+                  | titlecase
+              }}
+              - {{ experiencia.fecha_fin | date: "yyyy" }}
+            </p>
+            <button
+            *ngIf="isLogged"
+            type="button"
+            class="btn btn-success"
+            routerLink="experiencia/editar/{{ experiencia.id }}"
+          >
+            Editar {{ experiencia.puesto }}
+          </button>
+
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
